@@ -12,7 +12,13 @@
     
     # Récupération des tags
     $tags = ORM::for_table('tags')->find_result_set();
-
+    
+    # Récupération des 5 derniers articles
+    $lastFiveArticles = ORM::for_table('view_articles')->limit(5)->order_by_desc('DATECREATIONARTICLE')->find_result_set();
+    
+    # Récupération des Articles en Avant
+    $specialArticles = ORM::for_table('view_articles')->where('SPECIALARTICLE', 1)->find_result_set();
+    
     ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -105,7 +111,7 @@
 			<!-- LAYOUT AVEC LA SIDEBAR -->
             <?php include_once 'sidebar.inc.php'; ?>
                
-        </div>
+        </div></div>
         <!--footer-->
         <footer class="footer">
             <div class="container">
