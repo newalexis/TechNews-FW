@@ -27,7 +27,7 @@ trait Shortcut
      * Créer un SLUG à partir du Titre d'un Article
      * http://stackoverflow.com/questions/2955251/php-function-to-make-slug-url-string
      */
-    public function generateSlug($text) {
+    public static function generateSlug($text) {
         // replace non letter or digits by -
         $text = preg_replace('~[^\pL\d]+~u', '-', $text);
         

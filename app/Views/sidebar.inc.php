@@ -1,3 +1,5 @@
+<?php 
+    use Model\Shortcut; ?>
 <!--colright-->
 <div class="col-md-4 col-sm-12">
 	<!--tab popular-->
@@ -13,10 +15,10 @@
 			<ul class="list-news-popular">
 				<?php foreach ($lastFiveArticles as $lastFiveArticle) : ?>
 				<li>
-					<a href="#">
+					<a href="<?= $this->url('default_article', ['id' => $lastFiveArticle->IDARTICLE, 'slug' => Shortcut::generateSlug($lastFiveArticle->TITREARTICLE)]); ?>">
 						<img alt="" src="<?= $this->assetUrl('/images/product/'.$lastFiveArticle->FEATUREDIMAGEARTICLE); ?>">
 					</a>
-					<h3><a href="#"><?= $lastFiveArticle->TITREARTICLE; ?></a></h3>
+					<h3><a href="<?= $this->url('default_article', ['id' => $lastFiveArticle->IDARTICLE, 'slug' => Shortcut::generateSlug($lastFiveArticle->TITREARTICLE)]); ?>"><?= $lastFiveArticle->TITREARTICLE; ?></a></h3>
 					<div class="meta-post">
 						<a href="#">
 							<?= $lastFiveArticle->PRENOMAUTEUR; ?> <?= $lastFiveArticle->NOMAUTEUR; ?>
@@ -91,10 +93,10 @@
 		<div class="list-special">
 		<?php foreach ($specialArticles as $article) : ?>
 			<article class="news-two-large">
-				<a href="#">
+				<a href="<?= $this->url('default_article', ['id' => $article->IDARTICLE, 'slug' => Shortcut::generateSlug($article->TITREARTICLE)]); ?>">
 					<img alt="" src="<?= $this->assetUrl('/images/product/'.$article->FEATUREDIMAGEARTICLE); ?>">
 				</a>
-				<h3><a href="#"><?= $article->TITREARTICLE; ?></a></h3>
+				<h3><a href="<?= $this->url('default_article', ['id' => $article->IDARTICLE, 'slug' => Shortcut::generateSlug($article->TITREARTICLE)]); ?>"><?= $article->TITREARTICLE; ?></a></h3>
 				<div class="meta-post">
 					<a href="#">
 						<?= $article->PRENOMAUTEUR; ?> <?= $article->NOMAUTEUR; ?>

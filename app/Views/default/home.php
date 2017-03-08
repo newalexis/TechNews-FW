@@ -22,7 +22,7 @@
         				</div>
         				<div class="spotlight-item-caption">
         					<h2 class="font-heading">
-        						<a href="#">
+        						<a href="<?= $this->url('default_article', ['id' => $slide->IDARTICLE, 'slug' => Shortcut::generateSlug($slide->TITREARTICLE)]); ?>">
         							<?= $slide->TITREARTICLE; ?>
         						</a>
         					</h2>
@@ -49,12 +49,12 @@
         			<div class="col-md-4 col-sm-4 col-xs-12">
         				<div class="spotlight-item-thumb">
         					<div class="spotlight-item-thumb-img">
-        						<a href="#">
+        						<a href="<?= $this->url('default_article', ['id' => $article->IDARTICLE, 'slug' => Shortcut::generateSlug($article->TITREARTICLE)]); ?>">
         							<img alt="" src="<?= $this->assetUrl('/images/product/'.$article->FEATUREDIMAGEARTICLE); ?>">
         						</a>
         						<a href="#" class="cate-tag"><?= $article->LIBELLECATEGORIE; ?></a>
         					</div>
-        					<h3><a href="#"><?= $article->TITREARTICLE; ?></a></h3>
+        					<h3><a href="<?= $this->url('default_article', ['id' => $article->IDARTICLE, 'slug' => Shortcut::generateSlug($article->TITREARTICLE)]); ?>"><?= $article->TITREARTICLE; ?></a></h3>
         					<div class="meta-post">
         						<a href="#">
         							<?= $article->PRENOMAUTEUR; ?> <?= $article->NOMAUTEUR; ?>
