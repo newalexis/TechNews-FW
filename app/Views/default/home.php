@@ -1,6 +1,6 @@
 <?php 
     # Layout utilisé pour la vue
-    $this->layout('layout', ['title' => 'Accueil']);
+    $this->layout('layout', ['title' => 'Accueil', 'current' => 'Accueil']);
     use Model\Shortcut;
 ?>
 

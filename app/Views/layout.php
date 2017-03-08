@@ -65,9 +65,10 @@
     <nav class="menu-res hidden-lg hidden-md ">
         <div class="menu-res-inner">
             <ul>
-                <?php foreach($categories as $categorie) : ?>
-    				<li><a href="#"><?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
-    			<?php endforeach; ?>
+                <li <?php if($current == 'Accueil') { echo 'class="current"'; } ?> ><a href="<?= $this->url("default_home"); ?>">Accueil</a></li>
+                    <?php foreach($categories as $categorie) : ?>
+        				<li <?php if($current == $categorie->getLIBELLECATEGORIE()) { echo 'class="current"'; } ?> ><a href="<?= $this->url("default_categorie", ["categorie" => strtolower($categorie->getLIBELLECATEGORIE())]); ?>"><?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+        			<?php endforeach; ?>
             </ul>
         </div>
     </nav>
@@ -90,8 +91,9 @@
                     <span>MENU</span>
                 </div>
                 <ul class="hidden-sm hidden-xs">
+                	<li <?php if($current == 'Accueil') { echo 'class="current"'; } ?> ><a href="<?= $this->url("default_home"); ?>">Accueil</a></li>
                     <?php foreach($categories as $categorie) : ?>
-        				<li><a href="<?//= $this->url($categorie->getROUTECATEGORIE()); ?>"><?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+        				<li <?php if($current == $categorie->getLIBELLECATEGORIE()) { echo 'class="current"'; } ?> ><a href="<?= $this->url("default_categorie", ["categorie" => strtolower($categorie->getLIBELLECATEGORIE())]); ?>"><?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
         			<?php endforeach; ?>
                 </ul>
                 <div class="search-icon">

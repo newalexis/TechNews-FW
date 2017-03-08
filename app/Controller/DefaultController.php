@@ -31,10 +31,11 @@ class DefaultController extends Controller
 	    DBFactory::start();
 	    
 	    # Récupérations des Articles de la Catégorie
-	    $articles = \ORM::for_table('view_articles')->where('LIBELLECATEGORIE', ucfirst($categorie))->find_result_set();
-	    
+	    $articles  = \ORM::for_table('view_articles')->where('LIBELLECATEGORIE', ucfirst($categorie))->find_result_set();
+	    $nbarticles = $articles->count();
+	
 	    # Transmettre à la Vue
-	    $this->show('default/categorie', ['articles' => $articles]);
+	    $this->show('default/categorie', ['articles' => $articles, 'categorie' => $categorie, 'nbarticles' => $nbarticles]);
 	    
 	}
 
