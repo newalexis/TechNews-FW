@@ -15,6 +15,6 @@
 		['POST', '/app/Views/default/EditeurArticle.php', 'Article#RecupForm', 'article_recupform'],
 
 	// à développer	['GET', '/article/add', 'Article#AddNew', 'article_addnew'],
-
+		['POST', '/article/add', 'Add#NewArticle', 'add_newarticle'],
 
 	);
